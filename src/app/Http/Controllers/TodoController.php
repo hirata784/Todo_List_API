@@ -14,7 +14,11 @@ class TodoController extends Controller
      */
     public function index()
     {
-        //
+        // 全データ取得
+        $items = Todo::all();
+        return response()->json([
+            'data' => $items
+        ], 200);
     }
 
     /**
@@ -25,18 +29,15 @@ class TodoController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Todo  $todo
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Todo $todo)
-    {
-        //
+        // データ追加
+        $item = Todo::create([
+            // 新規作成のためin_doneは未完了
+            'task' => $request->input('task'),
+            'is_done' => 0
+        ]);
+        return response()->json([
+            'data' => $item
+        ], 201);
     }
 
     /**
@@ -48,7 +49,27 @@ class TodoController extends Controller
      */
     public function update(Request $request, Todo $todo)
     {
-        //
+        // データ更新
+        if ($todo->is_done == 0) {
+            $reverse = 1;
+        } else {
+            $reverse = 0;
+        }
+        // is_doneを反転させる
+        $update = [
+            'is_done' => $reverse
+        ];
+        $item = Todo::where('id', $todo->id)->update($update);
+
+        if ($item) {
+            return response()->json([
+                'message' => 'Updated successfully',
+            ], 200);
+        } else {
+            return response()->json([
+                'message' => 'Not found',
+            ], 404);
+        }
     }
 
     /**
@@ -59,6 +80,16 @@ class TodoController extends Controller
      */
     public function destroy(Todo $todo)
     {
-        //
+        // データ削除
+        $item = Todo::where('id', $todo->id)->delete();
+        if ($item) {
+            return response()->json([
+                'message' => 'Delete successfully'
+            ], 200);
+        } else {
+            return response()->json([
+                'message' => 'Not found'
+            ], 404);
+        }
     }
 }

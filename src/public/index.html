@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoリストAPI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="content">
+        <!-- タイトル -->
+        <h1>TodoリストAPI</h1>
+        <!-- テーブル(todoリスト内容+完了ボタン+削除ボタン) -->
+        <table border="1">
+            <tr>
+                <th>内容</th>
+                <th>完了</th>
+                <th>削除</th>
+            </tr>
+            <tr>
+                <td>朝ごはん</td>
+                <td class="btn">
+                    <button class="updateBtn">完了</button>
+                </td>
+                <td class="btn">
+                    <button class="deleteBtn">削除</button>
+                </td>
+            </tr>
+            <tr>
+                <td>昼ごはん</td>
+                <td class="btn">
+                    <button class="updateBtn">完了</button>
+                </td>
+                <td class="btn">
+                    <button class="deleteBtn">削除</button>
+                </td>
+            </tr>
+            <tr>
+                <td>夜ごはん</td>
+                <td class="btn">
+                    <button class="updateBtn">完了</button>
+                </td>
+                <td class="btn">
+                    <button class="deleteBtn">削除</button>
+                </td>
+            </tr>
+        </table>
+        <h2>Todoリストの追加</h2>
+        <input type="text" class="txt">
+        <button class="addBtn">追加</button>
+    </div>
+</body>
+
+</html>
