@@ -16,7 +16,7 @@ class TodosTableSeeder extends Seeder
     {
         $param = [
             'task' => '朝ごはん',
-            'is_done' => '1',
+            'is_done' => '0',
         ];
         DB::table('todos')->insert($param);
     }

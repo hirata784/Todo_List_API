@@ -10,47 +10,16 @@
 
 <body>
     <div class="content">
-        <!-- タイトル -->
         <h1>TodoリストAPI</h1>
-        <!-- テーブル(todoリスト内容+完了ボタン+削除ボタン) -->
-        <table border="1">
-            <tr>
-                <th>内容</th>
-                <th>完了</th>
-                <th>削除</th>
-            </tr>
-            <tr>
-                <td>朝ごはん</td>
-                <td class="btn">
-                    <button class="updateBtn">完了</button>
-                </td>
-                <td class="btn">
-                    <button class="deleteBtn">削除</button>
-                </td>
-            </tr>
-            <tr>
-                <td>昼ごはん</td>
-                <td class="btn">
-                    <button class="updateBtn">完了</button>
-                </td>
-                <td class="btn">
-                    <button class="deleteBtn">削除</button>
-                </td>
-            </tr>
-            <tr>
-                <td>夜ごはん</td>
-                <td class="btn">
-                    <button class="updateBtn">完了</button>
-                </td>
-                <td class="btn">
-                    <button class="deleteBtn">削除</button>
-                </td>
-            </tr>
-        </table>
+        <table id="js-todos" border="1"></table>
         <h2>Todoリストの追加</h2>
-        <input type="text" class="txt">
-        <button class="addBtn">追加</button>
+        <div>
+            <input type="text" id="js-task" class="task" name="task" placeholder="タスクを入力してください">
+            <button id="addTodo" class="addBtn">追加</button>
+            <div class="error" id="js-error"></div>
+        </div>
     </div>
+    <script src="./main.js"></script>
 </body>
 
 </html>

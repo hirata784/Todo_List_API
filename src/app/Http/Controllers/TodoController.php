@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Todo;
 use Illuminate\Http\Request;
 
+use App\Http\Requests\TodoRequest;
+
 class TodoController extends Controller
 {
     /**
@@ -27,7 +29,7 @@ class TodoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TodoRequest $request)
     {
         // データ追加
         $item = Todo::create([

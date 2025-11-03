@@ -24,8 +24,12 @@ table {
     margin: 10px 0;
 }
 
+.completion {
+    text-decoration: line-through;
+}
+
 .btn {
-    width: 67px;
+    width: 80px;
 }
 
 .updateBtn {
@@ -34,6 +38,16 @@ table {
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
+    width: 100%;
+}
+
+.notUpdate {
+    background-color: grey;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 100%;
 }
 
 .deleteBtn {
@@ -42,9 +56,10 @@ table {
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
+    width: 100%;
 }
 
-.txt {
+.task {
     width: 50%;
     height: 40px;
     font-size: 20px;
@@ -56,4 +71,8 @@ table {
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
+}
+
+.error {
+    color: red;
 }
